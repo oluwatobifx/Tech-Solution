@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Import & Export Partners — TechSolutions</title>
+  <meta name="description" content="Find importers and exporters by sector and country, see their locations and websites, and request partnerships." />
+  <meta name="theme-color" content="#050a09" />
+  <meta property="og:title" content="Import & Export Partners — TechSolutions" />
+  <meta property="og:description" content="Find importers and exporters by sector and country, see their locations and websites, and request partnerships." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="partners">
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="/" class="logo" aria-label="TechSolutions home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22c55e"/><path d="M9 11h14M16 11v12" stroke="#032312" stroke-width="3.2" stroke-linecap="round"/><circle cx="23" cy="22" r="2.4" fill="#032312"/></svg>TechSolutions</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/partners" aria-current="page">Partners</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/contact" class="btn btn-primary mobile-cta">Get Started <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </nav>
+      <div class="nav-right">
+        <a href="/contact" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow"><i></i>B2B network</span>
+        <h1>Meet importers &amp; exporters <span class="shine">ready to partner</span></h1>
+        <p class="lead">Search businesses by sector, country and trade type. See where they are — physically and online — and send a partnership request in one click.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:8px">
+      <div class="wrap">
+        <div class="filters" role="group" aria-label="Filter businesses">
+          <label>Search<input id="f-q" type="search" placeholder="Name, product or city…" autocomplete="off" /></label>
+          <label>Sector<select id="f-sector"></select></label>
+          <label>Country<select id="f-country"></select></label>
+          <label>Trade type<select id="f-trade"><option value="">Importers &amp; exporters</option><option value="import">Importers</option><option value="export">Exporters</option></select></label>
+        </div>
+        <p class="result-count" id="biz-count" aria-live="polite"></p>
+        <div class="biz-grid" id="biz-grid"></div>
+        <p class="muted" style="font-size:12.5px;margin-top:14px">Sample businesses for this concept site. Websites shown are placeholders.</p>
+      </div>
+    </section>
+
+    <section class="section" id="list">
+      <div class="wrap split">
+        <div class="panel reveal">
+          <h2>List your business</h2>
+          <p>Join the network so importers, exporters and customers can find you. Fields marked * are required.</p>
+          <form class="form" id="list-form" novalidate>
+            <div class="row">
+              <label>Business name *<input name="name" autocomplete="organization" placeholder="e.g. GoldCoast Shea Collective" /></label>
+              <label>Email *<input name="email" type="email" autocomplete="email" placeholder="trade@yourbusiness.com" /></label>
+            </div>
+            <div class="row">
+              <label>Sector *<select name="sector" id="l-sector"></select></label>
+              <label><span>Website <small>(optional)</small></span><input name="site" placeholder="yourbusiness.com" /></label>
+            </div>
+            <fieldset class="fieldset" id="trade"><legend>I am an… *</legend>
+              <div class="checks"><label class="check"><input type="checkbox" name="trade" value="import" /> Importer</label><label class="check"><input type="checkbox" name="trade" value="export" /> Exporter</label></div>
+            </fieldset>
+            <label>Street address *<input name="address" autocomplete="street-address" placeholder="e.g. 14 Bompai Road" /></label>
+            <div class="row">
+              <label>City *<input name="city" autocomplete="address-level2" placeholder="e.g. Kano" /></label>
+              <label>Country *<select name="country" id="l-country"></select></label>
+            </div>
+            <label>What do you sell or buy? *<textarea name="about" placeholder="e.g. We export refined shea butter in 25kg cartons…"></textarea></label>
+            <label><span>Looking for <small>(optional)</small></span><input name="looking" placeholder="e.g. Cosmetic brands in Europe" /></label>
+            <button class="btn btn-primary" type="submit">List my business <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <aside class="panel reveal">
+          <h2>Why join the network?</h2>
+          <ul class="ticks" style="margin-top:18px">
+            <li>Be found by importers and exporters in 12 countries</li>
+            <li>Show your physical location with a map link</li>
+            <li>Link your website and products</li>
+            <li>Receive partnership requests straight to your email</li>
+            <li>Track the deals in your sales dashboard</li>
+          </ul>
+          <p class="muted" style="font-size:13px;margin-top:18px">Concept site: listings are saved in this browser only.</p>
+        </aside>
+      </div>
+    </section>
+
+    <dialog class="dlg" id="req-dialog" aria-labelledby="req-title">
+      <form class="form" id="req-form" novalidate>
+        <div class="dlg-head"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg></span><div><h2 id="req-title">Request partnership</h2><p id="req-sub"></p></div><button type="button" class="dlg-close" aria-label="Close">&times;</button></div>
+        <input type="hidden" name="to" />
+        <div class="row">
+          <label>Your company *<input name="company" autocomplete="organization" /></label>
+          <label>Email *<input name="email" type="email" autocomplete="email" /></label>
+        </div>
+        <label>Type of partnership *<select name="type"><option value="">Select type</option><option>Buy from them (I import)</option><option>Sell to them (I export)</option><option>Distribution / agency</option><option>Logistics &amp; shipping</option><option>Joint venture</option></select></label>
+        <label>Message *<textarea name="message" placeholder="Introduce your business, products, volumes and the deal you have in mind…"></textarea></label>
+        <button class="btn btn-primary" type="submit">Send request <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+      <div id="req-done" class="form" hidden style="text-align:center">
+        <div class="dlg-head"><button type="button" class="dlg-close" aria-label="Close">&times;</button></div>
+        <span class="icon" style="margin:0 auto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-9-9.3C2 7.3 4.3 4.5 7.4 4.5c1.9 0 3.5 1 4.6 2.6 1.1-1.6 2.7-2.6 4.6-2.6 3.1 0 5.4 2.8 4.4 6.2C19.5 15.4 12 20 12 20Z"/></svg></span>
+        <h2>Request ready</h2>
+        <p class="muted">On the live platform this goes straight to the business. This is a concept site, so it was saved in your browser only.</p>
+      </div>
+    </dialog>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a href="/" class="logo" aria-label="TechSolutions home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22c55e"/><path d="M9 11h14M16 11v12" stroke="#032312" stroke-width="3.2" stroke-linecap="round"/><circle cx="23" cy="22" r="2.4" fill="#032312"/></svg>TechSolutions</a>
+          <p>Modern web solutions for businesses that want to grow — online stores, marketing, sales tracking and a B2B import &amp; export network.</p>
+        </div>
+        <div><h4>Platform</h4><ul><li><a href="/services#store">Online store</a></li><li><a href="/services#marketing">Marketing &amp; ads</a></li><li><a href="/dashboard">Sales dashboard</a></li><li><a href="/partners">B2B network</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/contact">Contact</a></li><li><a href="/services#faq">FAQ</a></li></ul></div>
+        <div><h4>Get listed</h4><ul><li><a href="/partners#list">List your business</a></li><li><a href="/partners">Find importers</a></li><li><a href="/partners">Find exporters</a></li></ul></div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; <span data-year>2026</span> TechSolutions. A concept product.</span>
+        <span>Designed &amp; built by <a href="https://tobi-portfolio-murex.vercel.app" target="_blank" rel="noopener">Oluwatobi Joel</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="/data.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>

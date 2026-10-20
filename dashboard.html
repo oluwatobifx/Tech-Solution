@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sales Dashboard — TechSolutions</title>
+  <meta name="description" content="Track your business transactions: revenue, top products and sales channels in one dashboard." />
+  <meta name="theme-color" content="#050a09" />
+  <meta property="og:title" content="Sales Dashboard — TechSolutions" />
+  <meta property="og:description" content="Track your business transactions: revenue, top products and sales channels in one dashboard." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-page="dashboard">
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="/" class="logo" aria-label="TechSolutions home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22c55e"/><path d="M9 11h14M16 11v12" stroke="#032312" stroke-width="3.2" stroke-linecap="round"/><circle cx="23" cy="22" r="2.4" fill="#032312"/></svg>TechSolutions</a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/partners">Partners</a>
+        <a href="/dashboard" aria-current="page">Dashboard</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+        <a href="/contact" class="btn btn-primary mobile-cta">Get Started <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+      </nav>
+      <div class="nav-right">
+        <a href="/contact" class="btn btn-primary btn-sm">Get Started</a>
+        <button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow"><i></i>Sales dashboard</span>
+        <h1>Track every sale, <span class="shine">see what works</span></h1>
+        <p class="lead">Record transactions from your store, shop, social media and B2B deals. Your revenue, best sellers and strongest channels update instantly.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:8px">
+      <div class="wrap">
+        <div class="kpis">
+          <div class="kpi reveal"><small>Total revenue</small><strong id="k-rev">₦0</strong></div>
+          <div class="kpi reveal"><small>Transactions</small><strong id="k-orders">0</strong></div>
+          <div class="kpi reveal"><small>Units sold</small><strong id="k-units">0</strong></div>
+          <div class="kpi reveal"><small>Average sale</small><strong id="k-avg">₦0</strong></div>
+        </div>
+        <div class="dash-grid">
+          <div class="panel chart glow"><h2>Revenue — last 14 days</h2><div id="chart"></div></div>
+          <div class="panel">
+            <h2>Record a sale</h2>
+            <form class="form" id="sale-form" novalidate>
+              <label>Product *<input name="product" placeholder="e.g. Shea butter (500g)" list="products" /></label>
+              <div class="row">
+                <label>Quantity *<input name="qty" type="number" min="1" step="1" inputmode="numeric" /></label>
+                <label>Unit price (₦) *<input name="price" type="number" min="1" step="50" inputmode="decimal" /></label>
+              </div>
+              <div class="row">
+                <label>Channel<select name="channel" id="s-channel"></select></label>
+                <label>Date *<input name="date" type="date" /></label>
+              </div>
+              <label><span>Customer <small>(optional)</small></span><input name="customer" placeholder="e.g. Atlas Home &amp; Décor" /></label>
+              <button class="btn btn-primary" type="submit">Add sale <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+              <p class="form-status" role="status" aria-live="polite"></p>
+            </form>
+            <datalist id="products"><option value="Shea butter (500g)"><option value="Black soap (bar)"><option value="Hibiscus tea (1kg)"><option value="Adire fabric (6 yards)"><option value="Gift box"></datalist>
+          </div>
+        </div>
+        <div class="dash-grid">
+          <div class="panel"><h2>Sales by channel</h2><ul class="top-list" id="channels"></ul></div>
+          <div class="panel"><h2>Top products</h2><ul class="top-list" id="top"></ul></div>
+        </div>
+        <div class="panel" style="margin-top:18px">
+          <div class="dash-tools"><h2>Transactions</h2><div class="hero-ctas" style="margin:0"><button class="btn btn-ghost btn-sm" id="export" type="button">Export CSV</button><button class="btn btn-ghost btn-sm" id="reset" type="button">Load demo data</button><button class="btn btn-ghost btn-sm" id="clear" type="button">Clear all</button></div></div>
+          <div class="table-wrap"><table><thead><tr><th>Date</th><th>Product</th><th>Channel</th><th>Customer</th><th class="num">Qty</th><th class="num">Price</th><th class="num">Total</th><th><span class="sr-only">Delete</span></th></tr></thead><tbody id="sales-body"></tbody></table></div>
+          <p class="muted" style="font-size:12.5px;margin-top:12px">Concept site: sales are saved in this browser only.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a href="/" class="logo" aria-label="TechSolutions home"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#22c55e"/><path d="M9 11h14M16 11v12" stroke="#032312" stroke-width="3.2" stroke-linecap="round"/><circle cx="23" cy="22" r="2.4" fill="#032312"/></svg>TechSolutions</a>
+          <p>Modern web solutions for businesses that want to grow — online stores, marketing, sales tracking and a B2B import &amp; export network.</p>
+        </div>
+        <div><h4>Platform</h4><ul><li><a href="/services#store">Online store</a></li><li><a href="/services#marketing">Marketing &amp; ads</a></li><li><a href="/dashboard">Sales dashboard</a></li><li><a href="/partners">B2B network</a></li></ul></div>
+        <div><h4>Company</h4><ul><li><a href="/about">About</a></li><li><a href="/#pricing">Pricing</a></li><li><a href="/contact">Contact</a></li><li><a href="/services#faq">FAQ</a></li></ul></div>
+        <div><h4>Get listed</h4><ul><li><a href="/partners#list">List your business</a></li><li><a href="/partners">Find importers</a></li><li><a href="/partners">Find exporters</a></li></ul></div>
+      </div>
+      <div class="foot-bottom">
+        <span>&copy; <span data-year>2026</span> TechSolutions. A concept product.</span>
+        <span>Designed &amp; built by <a href="https://tobi-portfolio-murex.vercel.app" target="_blank" rel="noopener">Oluwatobi Joel</a></span>
+      </div>
+    </div>
+  </footer>
+  <script src="/data.js" defer></script>
+  <script src="/app.js" defer></script>
+</body>
+</html>
